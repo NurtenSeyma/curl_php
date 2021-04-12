@@ -1,0 +1,15 @@
+<?php
+
+session_stat();
+
+$curl =curl_init();
+curl_setopt($curl, CURLOPT_URL. "http://localhost/curl/cookie.php");
+
+//curl_setopt($curl, CURLOPT_COOKIE, "abc", 200);
+curl_setopt($curl, CURLOPT_COOKIEJAR, session_id());
+curl_setopt($curl, CURLOPT_COOKIEFILE, session_id());
+curl_exec($curl);
+curl_close($curl);
+
+
+?>

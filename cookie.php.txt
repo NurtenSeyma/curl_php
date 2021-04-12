@@ -1,0 +1,15 @@
+<?php
+
+function baglan ($url, $degerler) {
+	$curl =curl_init();
+    curl_setopt($curl, CURLOPT_URL. "http://localhost/curl/cookie.php");
+    curl_setopt($curl, CURLOPT_POST, true);
+    curl_setopt($curl, CURLOPT_COOKIEJAR, "cookie.txt");
+    curl_setopt($curl, CURLOPT_COOKIEFILE, "cookie.txt");
+    curl_exec($curl);
+    curl_close($curl);
+}
+
+baglan ("");
+
+?>
